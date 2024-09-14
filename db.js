@@ -10,9 +10,11 @@ const User = new Schema({
 });
 
 const Todo = new Schema({
-    userId: ObjectId,
-    title: String,
-    done: Boolean
+  userId: ObjectId,
+  title: String,
+  done: Boolean,
+  createdAt: { type: Date, default: Date.now }, // Automatically set to current date and time
+  dueBy: Date // User can specify a due date
 });
 
 const UserModel = mongoose.model('users', User);
